@@ -14,10 +14,10 @@ public class LoggingAspect {
 
 	}
 
-	@AfterReturning(value = "controllerAllPointCut()", returning = "arg")
-	public void afterMethodAspect(JoinPoint jp, Object arg) {
+	@AfterReturning(value = "controllerAllPointCut()", returning = "returningVal")
+	public void afterMethodAspect(JoinPoint jp, Object returningVal) {
 		System.out.println("After execution  :" + jp.getSignature().getName());
-		System.out.println("Return value : " + arg);
+		System.out.println("Return value : " + returningVal);
 	}
 
 	// Around advice for calculating the total execution time...
